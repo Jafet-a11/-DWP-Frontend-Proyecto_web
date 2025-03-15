@@ -25,8 +25,8 @@ const Register = () => {
             </Col>
 
             {/* Columna derecha */}
-            <Col span={12} style={{ backgroundColor: "#660033", display: "flex", justifyContent: "center", alignItems: "center" }}>
-                <Card style={{ width: 400, textAlign: "center", backgroundColor: "#660033", border: "none" }}>
+            <Col span={12} style={{ backgroundColor: "#BCCCDC", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Card style={{ width: 400, textAlign: "center", backgroundColor: "#BCCCDC", border: "none" }}>
                 <div style={{ width: 100, height: 100, borderRadius: "50%", background: "white", margin: "0 auto 20px", display: "flex", justifyContent: "center", alignItems: "center", overflow: "hidden" }}>
                     <img src="/Designer.jpeg" alt="Imagen de logo"
                             style={{ 
@@ -68,7 +68,7 @@ const Register = () => {
                             <Button type="primary" htmlType="submit" style={{ width: "100%", backgroundColor: "#880044", borderColor: "#fff" }}>Registrarse</Button>
                         </Form.Item>
                         <Form.Item>
-                            <Button style={{ width: "100%" }} onClick={() => navigate("/LoginPage")}>Iniciar sesión</Button>
+                            <Button style={{ width: "100%", backgroundColor: "#880044", borderColor: "#fff", color:"white"}} onClick={() => navigate("/LoginPage")}>Iniciar sesión</Button>
                         </Form.Item>
                     </Form>
                 </Card>

@@ -1,0 +1,21 @@
+.header {
+    background: #99003d;
+    display: flex;
+    align-items: center;
+    justify-Content: space-between;
+    padding: 0 20px;
+}
+
+.ipunt-buscar{
+    width: 200;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: white;
+}
+.button2 {
+    border-radius: '4px';
+    border: '1px solid #ccc';
+    background: 'white';
+    color: 'black';
+}
+

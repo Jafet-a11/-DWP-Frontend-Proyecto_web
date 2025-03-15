@@ -36,3 +36,29 @@
     transform: rotate(360deg);
   }
 }
+
+.button2 {
+  background-color: #880044;
+  color: white;
+  border-radius: 8px;
+  padding: 12px 24px;
+}
+
+/* App.css */
+.white-text {
+  color: white !important; /* Usamos !important solo en la clase */
+}
+
+.button-small-width {
+  width: auto !important; /* Ajusta al contenido */
+  padding: 4px 12px !important;
+  font-size: 12px !important;
+  height: auto !important;
+}
+
+.button-custom-width {
+  width: 150px !important; /* Ancho específico */
+  padding: 8px 12px !important;
+  font-size: 12px !important;
+  height: auto !important;
+}
