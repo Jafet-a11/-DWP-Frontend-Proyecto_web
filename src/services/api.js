@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://proyecto-web-backend-2ft0.onrender.com";
 
 const api = axios.create({
     baseURL:API_BASE_URL,
@@ -16,7 +16,8 @@ api.interceptors.request.use(
         const token = await localStorage.getItem("token");
         if(token){
             config.headers.Autorization = `Bearer ${token}`;
-        }console.debug("retornando receptor");
+        }
+        console.debug("retornando receptor");
         return config;
     },
     (error) => {

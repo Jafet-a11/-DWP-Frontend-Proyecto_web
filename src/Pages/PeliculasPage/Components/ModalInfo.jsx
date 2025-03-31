@@ -1,11 +1,10 @@
-// MovieModal.js
 import React from 'react';
 import { Modal, Card, Button } from 'antd';
 
 const MovieModal = ({ visible, onClose, movie }) => {
   return (
     <Modal
-      title="Película"
+      title={movie?.title}
       visible={visible}
       onCancel={onClose}
       footer={null} // Oculta el footer predeterminado del modal
@@ -13,17 +12,10 @@ const MovieModal = ({ visible, onClose, movie }) => {
       <Card>
         <div style={{ display: 'flex', alignItems: 'flex-start' }}>
           <div style={{ width: '150px', marginRight: '20px' }}>
-            <div
-              style={{
-                width: '100%',
-                height: '200px',
-                backgroundColor: '#f0f0f0',
-                marginBottom: '10px',
-                border: "1px solid black",
-                borderRadius: "15px",
-              }}
-            />
-            <div style={{ textAlign: 'center' }}>Imagen</div>
+            <div style={{ width: '150px', height: '200px', marginBottom: '10px', borderRadius: "15px", overflow: "hidden", }}>
+              <img src={movie?.imageUrl} alt={movie?.title} style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+            </div>
+
           </div>
           <div>
             <div>

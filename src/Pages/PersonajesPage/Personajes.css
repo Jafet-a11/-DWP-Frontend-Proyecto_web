@@ -1,8 +1,12 @@
 .trapezoid-bottom-card {
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), 80% 100%, 20% 100%, 0 calc(100% - 20px)); /* Ajusta el valor de 20px y los porcentajes según tu necesidad */
-  }
-  
-  /* O una alternativa ligeramente diferente */
-  /* .trapezoid-bottom-card {
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), 90% 100%, 10% 100%, 0 calc(100% - 15px));
-  } */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), 80% 100%, 20% 100%, 0 calc(100% - 20px)); /* Ajusta el valor de 20px y los porcentajes según tu necesidad */
+  text-align: center;
+}
+
+/* Aplica los estilos solo al título dentro de la tarjeta */
+.trapezoid-bottom-card .ant-card-meta-title {
+  white-space: normal !important;  /* Permite saltos de línea */
+  overflow: visible !important;    /* Evita que el texto se oculte */
+  text-align: center;
+  display: block; /* Asegura que el título ocupe todo el ancho */
+}

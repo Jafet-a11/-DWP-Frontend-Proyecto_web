@@ -1,21 +1,32 @@
-// CharacterGrid.js
-import React from 'react';
-import { Row, Col } from 'antd';
-import CharacterCard from './CharacterCard';
-import { Link } from 'react-router-dom'; // Importa Link
+import React, { useEffect, useState } from "react";
+import { personajes } from "../../../services/MarvelService"; // Importa la API
+import CharacterCard from "./CharacterCard"; // Importa el componente de tarjeta
+import { Link } from 'react-router-dom'; 
+const CharacterList = () => {
+  const [characters, setCharacters] = useState([]);
 
-const CharacterGrid = ({ characters }) => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await personajes(); // Llama a la API
+        setCharacters(data); // Guarda los personajes en el estado
+      } catch (error) {
+        console.error("Error al obtener personajes:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <Row gutter={[16, 16]}>
-      {characters.map((character, index) => (
-        <Col key={index} xs={20} sm={8} md={8} lg={6} xl={4}>
-          <Link to="/Personajes/InfoPersonajes"> {/* Usa Link para crear un enlace */}
-            <CharacterCard characterName={character} />
-          </Link>
-        </Col>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "16px" }}>
+      {characters.map((character) => (
+        <Link to={`/Personajes/InfoPersonajes/${character.id}`}>
+        <CharacterCard key={character.id} character={character} />
+        </Link>
       ))}
-    </Row>
+    </div>
   );
 };
 
-export default CharacterGrid;
+export default CharacterList;

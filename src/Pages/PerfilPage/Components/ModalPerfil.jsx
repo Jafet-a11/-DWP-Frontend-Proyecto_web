@@ -18,7 +18,9 @@ const ProfileUpdateSuccessModal = ({ visible, onOk }) => {
       <CheckCircleOutlined style={{ color: '#52c41a', fontSize: '64px', marginBottom: '20px' }} />
       <p style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '10px' }}>
         Datos actualizados correctamente
+       
       </p>
+      Nota: para ver tu nueva foto inicia sesion nuevamente.
     </Modal>
   );
 };

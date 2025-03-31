@@ -2,29 +2,32 @@ import React from "react";
 import { Card } from "antd";
 import "../Personajes.css"; // Importa el archivo CSS
 
-const CharacterCard = ({ characterName }) => {
+const CharacterCard = ({ character }) => {
   return (
     <Card
-      className="trapezoid-bottom-card" // Agrega una clase para aplicar el estilo
+      className="trapezoid-bottom-card"
       style={{
         width: 165,
         marginBottom: 16,
         backgroundColor: "black",
         color: "white",
-        border: "12px solid black", // Mantén el borde para la parte superior
-        borderRadius: "4px 4px 0 0", // Redondea solo las esquinas superiores
+        border: "12px solid black",
+        borderRadius: "4px 4px 0 0",
       }}
       cover={
-        <div
-          style={{
-            height: 120,
-            backgroundColor: "#f0f0f0",
-          }}
+        <img
+          src={character.Imagen} // Ajusta el campo de la API
+          alt={character.Nombre}
+          style={{ height: 130, objectFit: "cover" }}
         />
       }
     >
       <Card.Meta
-        title={<span style={{ color: "white" }}>{characterName}</span>}
+         title={
+          <span style={{ color: "white", display: "block", minHeight: "40px", textAlign: "center" }}>
+            {character.Nombre}
+          </span>
+        }
       />
     </Card>
   );

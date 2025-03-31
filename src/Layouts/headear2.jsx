@@ -1,37 +1,27 @@
-import { Layout, Input, Button, notification } from 'antd';
+import { Layout, notification } from 'antd';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import './App.css';
 
 const { Header } = Layout;
 
-function HeaderComponent({ setSearchQuery }) {
+function HeaderComponent() {
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
   const [selected, setSelected] = useState('Home'); // Estado para botón activo
-  const [searchQuery, setSearchInput] = useState(""); // Estado para el buscador
 
   const logout = () => {
     localStorage.clear(); // Borra todos los datos del localStorage
     navigate("/LoginPage");
   };
-  
- if (token === null) {
-      notification.error({message:"Debes iniciar sesión"},);
-      setTimeout(() => {
-      window.location.href = "/LoginPage";
-   }, 1000); // Redirige después de 1 segundo
-  } 
 
-  // Función que maneja la búsqueda
-  const handleSearch = () => {
-    if (searchQuery.trim() !== "") {
-      setSearchQuery(searchQuery); // Pasa el valor del input al componente padre
-    } else {
-      setSearchQuery(''); // Pasa un valor vacío si no hay búsqueda
-    }
-  };
+  if (token === null) {
+    notification.error({message:"Debes iniciar sesión"},);
+    setTimeout(() => {
+    window.location.href = "/LoginPage";
+ }, 1000); // Redirige después de 1 segundo
+} 
 
   const buttonStyle = (buttonName) => ({
     background: selected === buttonName ? 'black' : 'transparent',
@@ -58,16 +48,6 @@ function HeaderComponent({ setSearchQuery }) {
         </button>
       </div>
 
-      {/* Buscador */}
-      <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-        <Input
-          placeholder="Buscar cómic..."
-          className='input-buscar'
-          value={searchQuery}
-          onChange={(e) => setSearchInput(e.target.value)} // Actualiza el estado de la búsqueda
-        />
-        <Button className="button2" onClick={handleSearch}>Buscar</Button>
-      </div>
     </Header>
   );
 }

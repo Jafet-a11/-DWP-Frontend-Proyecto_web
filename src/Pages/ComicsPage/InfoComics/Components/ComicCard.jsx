@@ -1,23 +1,28 @@
 import React from "react";
 import { Card } from "antd";
 
-const ComicCard = () => {
+const ComicCard = ({ comic }) => {
   return (
     <Card
       style={{
         width: 250,
         height: 320,
         borderRadius: "15px",
-        border: "1px solid black", // Contorno negro
+        border: "1px solid black",
       }}
-      bodyStyle={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div>Comic</div>
-    </Card>
+      cover={
+        <img
+          src={comic.Imagen}
+          alt={comic.Nombre}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            borderRadius: "15px",
+          }}
+        />
+      }
+    />
   );
 };
 
