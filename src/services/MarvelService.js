@@ -110,8 +110,8 @@ export const Eliminarpersonajes = async (id) => {
 };
 
 export const listenToUpdates = (callback) => {
-    const eventSource = new EventSource('http://localhost:5000/events');
-
+    const eventSource = new EventSource('https://proyecto-web-backend-2ft0.onrender.com/events');
+    
     eventSource.onopen = () => {
         console.log('Conexión SSE abierta');
     };
