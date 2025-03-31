@@ -19,9 +19,7 @@ function HeaderComponent({ setSearchQuery }) {
   
  if (token === null) {
       notification.error({message:"Debes iniciar sesión"},);
-      setTimeout(() => {
-      window.location.href = "/LoginPage";
-   }, 1000); // Redirige después de 1 segundo
+      setTimeout(() => navigate("/LoginPage"), 1000); // Redirige después de 1 segundo
   } 
 
   // Función que maneja la búsqueda
